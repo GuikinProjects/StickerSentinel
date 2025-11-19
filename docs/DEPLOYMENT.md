@@ -28,7 +28,7 @@ Before deploying, ensure you have:
      - Message Content Intent
 
 2. **Server Requirements**
-   - Node.js 18 LTS or newer installed
+   - Node.js 22 LTS or newer installed
    - Minimum 256MB RAM
    - Stable internet connection
    - Persistent storage for logs (optional)
@@ -48,15 +48,15 @@ Before deploying, ensure you have:
 
 1. **Install Node.js**
    ```bash
-   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
    sudo apt-get install -y nodejs
    ```
 
 2. **Clone and setup the project**
    ```bash
    cd /opt
-   sudo git clone https://github.com/yourusername/jasper_stickerclankers_detector.git
-   cd jasper_stickerclankers_detector
+   sudo git clone https://github.com/GuikinProjects/StickerSentinel.git
+   cd StickerSentinel
    sudo npm install --production
    ```
 
@@ -85,7 +85,7 @@ Before deploying, ensure you have:
    [Service]
    Type=simple
    User=nobody
-   WorkingDirectory=/opt/jasper_stickerclankers_detector
+   WorkingDirectory=/opt/StickerSentinel
    ExecStart=/usr/bin/node main.js
    Restart=always
    RestartSec=10
@@ -119,7 +119,7 @@ Before deploying, ensure you have:
 
 2. **Start the bot**
    ```bash
-   cd /path/to/jasper_stickerclankers_detector
+   cd /path/to/StickerSentinel
    pm2 start main.js --name sticker-sentinel
    ```
 
@@ -177,13 +177,13 @@ Before deploying, ensure you have:
 2. **Setup project**
    ```powershell
    cd C:\bots
-   git clone https://github.com/yourusername/jasper_stickerclankers_detector.git
-   cd jasper_stickerclankers_detector
+   git clone https://github.com/GuikinProjects/StickerSentinel.git
+   cd StickerSentinel
    npm install --production
    ```
 
 3. **Create environment file**
-   Create `C:\bots\jasper_stickerclankers_detector\.env`:
+   Create `C:\bots\StickerSentinel\.env`:
    ```
    BOT_TOKEN=your_bot_token_here
    LOG_CHANNEL_ID=1234567890123456789
@@ -194,7 +194,7 @@ Before deploying, ensure you have:
    Create `start-bot.bat`:
    ```batch
    @echo off
-   cd /d C:\bots\jasper_stickerclankers_detector
+   cd /d C:\bots\StickerSentinel
    node main.js
    pause
    ```
@@ -206,8 +206,8 @@ Before deploying, ensure you have:
    - Trigger: "When the computer starts"
    - Action: "Start a program"
    - Program: `C:\Program Files\nodejs\node.exe`
-   - Arguments: `C:\bots\jasper_stickerclankers_detector\main.js`
-   - Start in: `C:\bots\jasper_stickerclankers_detector`
+   - Arguments: `C:\bots\StickerSentinel\main.js`
+   - Start in: `C:\bots\StickerSentinel`
    - Check "Run whether user is logged on or not"
    - Check "Run with highest privileges"
 
@@ -226,12 +226,12 @@ Before deploying, ensure you have:
 2. **Install service**
    ```powershell
    cd C:\nssm\win64
-   .\nssm.exe install StickerSentinel "C:\Program Files\nodejs\node.exe" "C:\bots\jasper_stickerclankers_detector\main.js"
+   .\nssm.exe install StickerSentinel "C:\Program Files\nodejs\node.exe" "C:\bots\StickerSentinel\main.js"
    ```
 
 3. **Configure service**
    ```powershell
-   .\nssm.exe set StickerSentinel AppDirectory "C:\bots\jasper_stickerclankers_detector"
+   .\nssm.exe set StickerSentinel AppDirectory "C:\bots\StickerSentinel"
    .\nssm.exe set StickerSentinel DisplayName "StickerSentinel Discord Bot"
    .\nssm.exe set StickerSentinel Description "Protects against Discord sticker permission bypass"
    .\nssm.exe set StickerSentinel Start SERVICE_AUTO_START
@@ -250,7 +250,7 @@ Before deploying, ensure you have:
 
 1. **Create Dockerfile**
    ```dockerfile
-   FROM node:18-alpine
+   FROM node:22-alpine
    
    # Create app directory
    WORKDIR /app
@@ -376,7 +376,7 @@ docker-compose logs -f
    sudo yum install -y git
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
    source ~/.bashrc
-   nvm install 18
+   nvm install 22
    ```
 
 3. **Follow Linux deployment steps above**

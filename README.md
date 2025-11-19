@@ -40,19 +40,26 @@ Without the above, the bot may silently skip enforcement.
 
 ## Requirements
 
-- Node.js 18 LTS or newer
+- Node.js 22 LTS or newer
 - discord.js v14.24.2 or compatible version
 - A Discord bot application with the necessary intents enabled (Guilds, Guild Messages, Message Content, Guild Expressions, Guild Members, Guild Moderation)
 
 ## Setup
 
-1. Install dependencies:
+1. Clone the repository:
+
+```powershell
+git clone https://github.com/GuikinProjects/StickerSentinel.git
+cd StickerSentinel
+```
+
+2. Install dependencies:
 
 ```powershell
 npm install
 ```
 
-2. Create a `.env` file in the project root with the following variables:
+3. Create a `.env` file in the project root with the following variables:
 
 ```/dev/null/.env.example#L1-3
 BOT_TOKEN=your_bot_token_here
@@ -66,7 +73,7 @@ ALERT_MENTION=<@!123456789> or <@&987654321>
 | `LOG_CHANNEL_ID` | Channel or thread the bot should use for sticker violation logs. Threads are supported; the bot will auto-join if it has permission.                 |
 | `ALERT_MENTION`  | Optional mention string such as `<@!123>` or `<@&456>` to ping a user/role when an incident is logged. Mention parsing is locked down to avoid spam. |
 
-3. Invite the bot to your server using the following OAuth2 URL format:
+4. Invite the bot to your server using the following OAuth2 URL format:
 
 ```/dev/null/invite.txt#L1-2
 https://discord.com/api/oauth2/authorize?client_id=YOUR_BOT_CLIENT_ID&permissions=275415164928&scope=bot
@@ -79,7 +86,7 @@ Required OAuth2 permissions (decimal: `275415164928`):
 - Manage Messages
 - Manage Threads
 
-4. Ensure privileged intents are enabled in the Discord Developer Portal:
+5. Ensure privileged intents are enabled in the Discord Developer Portal:
    - Navigate to your bot application
    - Go to the "Bot" section
    - Enable "Server Members Intent"
@@ -121,7 +128,7 @@ pm2 startup
 Create a `Dockerfile`:
 
 ```/dev/null/Dockerfile#L1-7
-FROM node:18-alpine
+FROM node:22-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --only=production

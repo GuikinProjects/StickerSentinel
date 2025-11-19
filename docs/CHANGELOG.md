@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - discord.js ^14.24.2
 - dotenv ^17.2.3
 - @discordjs/builders ^1.13.0
-- Node.js 18 LTS or newer
+- Node.js 22 LTS or newer
 
 ## [Unreleased]
 

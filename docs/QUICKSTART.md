@@ -4,7 +4,7 @@ Get StickerSentinel running in under 5 minutes.
 
 ## Prerequisites
 
-- Node.js 18 or newer ([download here](https://nodejs.org/))
+- Node.js 22 or newer ([download here](https://nodejs.org/))
 - A Discord bot token ([create bot here](https://discord.com/developers/applications))
 
 ## Step 1: Enable Bot Intents
@@ -36,13 +36,20 @@ https://discord.com/api/oauth2/authorize?client_id=YOUR_BOT_CLIENT_ID&permission
 - Manage Messages
 - Manage Threads
 
-## Step 3: Install the Bot
+## Step 3: Clone the Project
+
+```bash
+git clone https://github.com/GuikinProjects/StickerSentinel.git
+cd StickerSentinel
+```
+
+## Step 4: Install the Bot
 
 ### Windows
 
 ```powershell
-# Clone or download the project
-cd E:\Dev-Workspace\jasper_stickerclankers_detector
+# Navigate into the cloned repository
+cd .\StickerSentinel
 
 # Install dependencies
 npm install
@@ -54,8 +61,8 @@ notepad .env
 ### Linux/Mac
 
 ```bash
-# Clone or download the project
-cd /path/to/jasper_stickerclankers_detector
+# Navigate into the cloned repository
+cd /path/to/StickerSentinel
 
 # Install dependencies
 npm install
@@ -64,7 +71,7 @@ npm install
 nano .env
 ```
 
-## Step 4: Configure Environment Variables
+## Step 5: Configure Environment Variables
 
 Add this to your `.env` file:
 
@@ -99,7 +106,7 @@ LOG_CHANNEL_ID=
 ALERT_MENTION=
 ```
 
-## Step 5: Start the Bot
+## Step 6: Start the Bot
 
 ```bash
 npm start
@@ -114,7 +121,7 @@ npm start
 [CLIENT] Log channel ID: 987654321098765432
 ```
 
-## Step 6: Test the Bot
+## Step 7: Test the Bot
 
 1. **Create a test channel** (restrict to moderators only)
 2. **Forward a message with an external sticker** from another server
